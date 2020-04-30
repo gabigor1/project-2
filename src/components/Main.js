@@ -46,8 +46,28 @@ handleSubmit = async (event, {dish, ingredient1, ingredient2, ingredient3}=this.
   event.preventDefault()
 
   try {
+
+const userIngredients = []
+
+    // Check which ingredients have been filled, take from state
+
+if (this.state.userChoices.ingredient1) {
+  userIngredients.push(this.state.userChoices.ingredient1)}
+
+  if (this.state.userChoices.ingredient2) {
+  userIngredients.push(this.state.userChoices.ingredient2)}
+
+  if (this.state.userChoices.ingredient3) {
+  userIngredients.push(this.state.userChoices.ingredient3)}
+
+
+const ingredientsString = userIngredients.join(',+')
+
+console.log(ingredientsString)
+
+
     // API request to get list of recipes
-    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=${ingredient1}&number=2`)
+    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=${ingredientsString}&number=2`)
     // Take out the id of each recipe
     const recipeIds =  res.data.map(recipe => recipe.id)
     console.log(res.data)
