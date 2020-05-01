@@ -14,6 +14,11 @@
   color: red;
 }
 
+.header img {
+  width: 50px;
+  height: 90px;
+}
+
 main {
   background-color: black;  
 }
@@ -72,4 +77,28 @@ button {
   align-items: center;
   flex-wrap: wrap;
   flex: 1 0 calc(33% - 20px);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 250px;
+  width: 150px;
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+img {
+  height: 200px;
+  width: 160px;
+
+}
+
+.card-title {
+  text-align: center;
+  font-family: myFont;
+  font-size: 10px;
 }
