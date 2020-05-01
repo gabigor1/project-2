@@ -20,26 +20,26 @@ handleChange = (event) => {
   };
 
 
-handleSubmit = async (event, {dish, ingredient1, ingredient2, ingredient3}=this.state.userChoices) => {
+handleSubmit = async (event, { ingredient1, ingredient2, ingredient3 }=this.state.userChoices) => {
   event.preventDefault()
 
   try {
 
-const userIngredients = []
+  const userIngredients = []
 
     // Check which ingredients have been filled, take from state
 
-if (this.state.userChoices.ingredient1) {
-  userIngredients.push(this.state.userChoices.ingredient1)}
+  if (ingredient1) {
+  userIngredients.push(ingredient1)}
 
-  if (this.state.userChoices.ingredient2) {
-  userIngredients.push(this.state.userChoices.ingredient2)}
+  if (ingredient2) {
+  userIngredients.push(ingredient2)}
 
-  if (this.state.userChoices.ingredient3) {
-  userIngredients.push(this.state.userChoices.ingredient3)}
+  if (ingredient3) {
+  userIngredients.push(ingredient3)}
 
 
-const ingredientsString = userIngredients.join(',+')
+  const ingredientsString = userIngredients.join(',+')
 
 
 
@@ -54,7 +54,11 @@ const ingredientsString = userIngredients.join(',+')
       return res.data
     }
     const recipeData = await Promise.all(recipeIds.map( id => getSingleRecipe(id)))
+
+
     this.setState({recipes: recipeData})
+  
+  
   } catch (err) {
     console.log(err)
   }
@@ -90,7 +94,7 @@ const ingredientsString = userIngredients.join(',+')
             <h3> WHAT SHOULD I COOK? </h3>
           </div>  
         <div className="button">
-          <button onSubmit={this.handleSubmit} type="submit">INSPIRE ME</button> 
+          <button onSubmit={this.handleSubmit} type="submit">INSPIRE ME!</button> 
         </div>
       </form>
       </div>

@@ -6,17 +6,20 @@
 .header{
   display: flex;
   background-color: black;
-  
 }
 
 .header h2{
   font-family:myFont;
   color: red;
+  margin: 20px 10px;
+  font-size: 30px;
 }
 
 .header img {
   width: 50px;
   height: 90px;
+  margin-left: 10px;
+
 }
 
 main {
@@ -28,7 +31,6 @@ main {
   justify-content: center;
   align-items: center;
   background-image: url('./assets/paper-background.png');
-
 }
 
 form {
@@ -90,13 +92,13 @@ button {
   margin: 20px;
   padding: 20px;
   flex-basis: auto;
-  box-shadow: 5px;
+  box-shadow: 15px lightblue;
+  /* transform:rotate(8deg) */
 }
 
 img {
   height: 200px;
   width: 160px;
-
 }
 
 .card-title {
