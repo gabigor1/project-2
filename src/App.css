@@ -81,6 +81,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
   flex: 1 0 calc(33% - 20px);
+  padding: 50px 100px 0px 100px;
 }
 
 .card {
