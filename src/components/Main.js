@@ -44,7 +44,7 @@ const ingredientsString = userIngredients.join(',+')
 
 
     // API request to get list of recipes
-    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=${ingredientsString}&number=4`)
+    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=${ingredientsString}&number=10`)
     // Take out the id of each recipe
     const recipeIds =  res.data.map(recipe => recipe.id)
     // console.log(res.data)

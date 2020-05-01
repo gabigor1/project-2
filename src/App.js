@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <img src={chefTransparent} width="50" height="90" alt="logo"/><h2>The Lockdown Chef</h2>
+        <img src={chefTransparent} alt="logo"/><h2>The Lockdown Chef</h2>
       </header>
         <Main />
     </div>

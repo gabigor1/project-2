@@ -89,6 +89,8 @@ button {
   background-color: white;
   margin: 20px;
   padding: 20px;
+  flex-basis: auto;
+  box-shadow: 5px;
 }
 
 img {
@@ -100,5 +102,5 @@ img {
 .card-title {
   text-align: center;
   font-family: myFont;
-  font-size: 10px;
+  font-size: 8px;
 }
