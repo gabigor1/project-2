@@ -11,33 +11,11 @@ class Main extends React.Component {
       ingredient2: '',
       ingredient3: ''
     },
-    recipes:[
-  //     {title: "recipe 1",
-  //   thumbnail: 'https://pbs.twimg.com/media/DufJofKX4AAFwIP.jpg', 
-  //   link: 'https://pbs.twimg.com/media/DufJofKX4AAFwIP.jpg'},
-  //   {title: "recipe 2",
-  //   thumbnail: 'https://4.bp.blogspot.com/-maCZQpou0Ec/Tfyf_mRm8FI/AAAAAAAAAQM/tkIa4b6K6_8/s1600/POLFD18.jpg',
-  // link: 'https://4.bp.blogspot.com/-maCZQpou0Ec/Tfyf_mRm8FI/AAAAAAAAAQM/tkIa4b6K6_8/s1600/POLFD18.jpg'},
-  //   {title: "recipe 3",
-  //   thumbnail: 'https://31csme3pssfltgd81lo7eu19-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/04_Polaroid-transfer.jpg',
-  // link: 'https://31csme3pssfltgd81lo7eu19-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/04_Polaroid-transfer.jpg'}
-]
+    recipes:[]
   }
   
 
-  // async componentDidMount() {
-  //   try {
-  //     const res = await axios.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=apples,+flour,+sugar&number=2')
-  //     // this.setState({ results: res.data })
-  //     console.log(res.data)
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
-
-
-  handleChange = (event) => {
+handleChange = (event) => {
     this.setState({ userChoices:{...this.state.userChoices, [event.target.name]: event.target.value }})
   };
 
@@ -63,15 +41,14 @@ if (this.state.userChoices.ingredient1) {
 
 const ingredientsString = userIngredients.join(',+')
 
-console.log(ingredientsString)
 
 
     // API request to get list of recipes
-    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=${ingredientsString}&number=2`)
+    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=00457b36e4884a15923e6cd91568706c&ingredients=${ingredientsString}&number=4`)
     // Take out the id of each recipe
     const recipeIds =  res.data.map(recipe => recipe.id)
-    console.log(res.data)
-    console.log(recipeIds) // This works!
+    // console.log(res.data)
+    // console.log(recipeIds) // This works!
     const getSingleRecipe = async (id) => {  
       const res = await  axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=00457b36e4884a15923e6cd91568706c&includeNutrition=false`)
       return res.data
@@ -85,41 +62,39 @@ console.log(ingredientsString)
 
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
-    <main>
-      <h2>Main page</h2>
+    <main className="main">
+      <div className="top">
       <form onSubmit={this.handleSubmit}>
-        <h3> I WANT TO COOK
-        <select>
-          <option>Roast</option>
-          <option>Pasta</option>
-          <option>Salad</option>
-        </select>
-        </h3>
-        <h3> AND I HAVE
+        <div className="text">
+        <h3>I HAVE </h3>
             <input className="input"
-            placeholder="Ingredient1"
+            placeholder="Type ingredient here"
             onChange={this.handleChange}
             name="ingredient1"
             value={this.state.userChoices.ingredient1}/> 
+            <h3> ,  </h3>
             <input className="input"
-            placeholder="Ingredient2"
+            placeholder="Type ingredient here"
             onChange={this.handleChange}
             name="ingredient2"
-            value={this.state.userChoices.ingredient2}/> 
+            value={this.state.userChoices.ingredient2}/>
+            <h3> AND </h3>  
             <input 
             className="input"
-            placeholder="Ingredient3"
+            placeholder="Type ingredient here"
             onChange={this.handleChange}
             name="ingredient3"
-            value={this.state.userChoices.ingredient3}/> 
-        </h3>
-        <div>
-          <button onSubmit={this.handleSubmit} type="submit">INSPIRE ME</button>
-      </div>
+            value={this.state.userChoices.ingredient3}/>
+            <h3> WHAT SHOULD I COOK? </h3>
+          </div>  
+        <div className="button">
+          <button onSubmit={this.handleSubmit} type="submit">INSPIRE ME</button> 
+        </div>
       </form>
-      <div>
+      </div>
+      <div className="bottom">
       {this.state.recipes.map(recipe => (
       <RecipeCard 
         key={recipe.id} 
