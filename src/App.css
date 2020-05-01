@@ -31,6 +31,7 @@ main {
   justify-content: center;
   align-items: center;
   background-image: url('./assets/paper-background.png');
+  background-repeat: no-repeat;
 }
 
 form {
@@ -71,6 +72,7 @@ button {
   background-color: red;
   border-radius: 15px;
   padding: 10px 40px 10px 40px;
+  border: none;
 }
 
 .bottom {
