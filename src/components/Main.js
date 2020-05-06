@@ -44,13 +44,13 @@ handleSubmit = async (event, { ingredient1, ingredient2, ingredient3 }=this.stat
 
 
     // API request to get list of recipes
-    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b5ca1201c7f1478e9c86fdf8c029c215&ingredients=${ingredientsString}&number=10`)
+    const res = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}&ingredients=${ingredientsString}&number=10`)
     // Take out the id of each recipe
     const recipeIds =  res.data.map(recipe => recipe.id)
     // console.log(res.data)
     // console.log(recipeIds) // This works!
     const getSingleRecipe = async (id) => {  
-      const res = await  axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=b5ca1201c7f1478e9c86fdf8c029c215&includeNutrition=false`)
+      const res = await  axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}&includeNutrition=false`)
       return res.data
     }
     const recipeData = await Promise.all(recipeIds.map( id => getSingleRecipe(id)))
