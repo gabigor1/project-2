@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# sei-project-two
 
-## Available Scripts
+General Assembly Project 2 : Hackaton, make an app - The Lockdown Chef
 
-In the project directory, you can run:
+## https://lockdown-chef.netlify.app/
 
-### `yarn start`
+## Goal: 
+Hackaton of 2 days to create an app with React.js, axios and an online API pair coding.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Timeframe: 48 hours
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `yarn test`
+- [Overview](#overview)
+- [Process](#process)
+- [Challenges](#challenges)
+- [Technologies](#technologies)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Overview
 
-### `yarn build`
+This project was the first time coding along with a partner. My partner and I decided to make an app about recipes, where you write the ingredients you have in home, to make dishes. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to use it
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+In the middle of the screen you have input where you can write a maximun of 3 ingredients, you have to put at least one to find a recipe. After you write your ingredients, you only have to press the button and it should appear recipes with the ingredients you choose.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Process
 
-### `yarn eject`
+The starting point was to find an API with ingredients a recipes for our app, we find Spoonacular an wonderful food API, which a great number of recipes and we can filter them with the ingredients. In addition, it is a free API if you don't do more than 100 request per month.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After we got our API we started to design our App, we made a simple design with a logo and the name of the app. First we made request with axios to get the recipes, we checked with Insomnia if we recieved the recipes, later we put some text inputs for the fill the ingredients to filter the recipes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Main Menu](src/assets/main.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Firstly, I started making the the design of the App with HTML5 and CSS, while my partner was making a logo for the app. After we have the design of the app. We started to make request to the API to get the recipes, we figured out that we need to adjust the URL to get the recipes filter by ingredients, we created a function to that join the ingredients in a string to filter the recipes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Ingredients](src/assets/ingredients.png)
 
-## Learn More
+Finally, we worked into making the appear the information of the recipes and we styled; images, name of the recipes and a link to the recipe to make the food.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Recipes](src/assets/recipes.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Challenges
 
-### Code Splitting
+This was the second project for the course. In this proyect, we have to make a request to the API of Spoonacular to get the list of recipes using the ingredients as references, it was tricky, we had to adjust the API URL to accept the ingredients for the research . One of the problems we had at the beginning it was when we tried to make to find recipes with multiple ingredients, we had to make an array with the ingredients which later we transform in a string to use in the request to get the recipes.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Technologies
 
-### Analyzing the Bundle Size
+- React.js
+- Axios
+- CSS
+- React router dom
+- Git / GitHub
+- Yarn
+- Insomnia
+- Netlify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
