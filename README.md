@@ -15,12 +15,12 @@ Timeframe: 48 hours
 - [Technologies](#technologies)
 - [Process](#process)
 - [Challenges](#challenges)
-- [Win](#win)
-- [Lesson](#lesson)
+- [Win](#wins)
+- [Lessons Learned](#lesson)
  
 ## Overview
  
-This project was the first time coding along with a partner. My partner and I decided to make an app about recipes, where you write the ingredients you have in-home, to make dishes.
+This project was the first time coding along with a partner. My partner and I decided to make an app about recipes, where you write the ingredients you have at home, to make dishes.
  
 ## Technologies
  
@@ -45,7 +45,7 @@ After we got our API we started to design our App, we made a simple design with 
  
 ![Main Menu](src/assets/main.png)
  
-Firstly, I started making the design of the App with HTML5 and CSS, while my partner was making a logo for the app. After we have the design of the app. We started to request the API to get the recipes, we figured out that we need to make 2 requests, one to filter the recipes with the ingredients and the last one to get all the data of those recipes (name, ingredients, how to make it) so firstly we adjust the URL to get the recipes to filter by ingredients and then we created a function to that join the ingredients in a string to filter the recipes.
+Firstly, I started making the design of the App with HTML5 and CSS, while my partner was making a logo for the app. After we have the design of the app. We started to request the API to get the recipes, we figured out that we need to make 2 requests, one to filter the recipes with the ingredients and the last one to get all the data of those recipes (name, ingredients, how to make it) so then we adjust the URL to get the recipes to filter by ingredients and then we created a function to that join the ingredients in a string to filter the recipes.
  
  
 ```
@@ -163,14 +163,14 @@ Finally, we worked into making the appear the information of the recipes and we 
 
 ![Recipes](src/assets/recipes.png)
 
-## Win
+## Wins
 
-The biggest win was to use 2 URL APIs to get the recipes with all the data we need. Also to limit the number the recipes you receive with the ingredients selected before we received hundreds of recipes so we limited to 10
+The biggest win was to use 2 URL APIs to get the recipes with all the data we need. Also to limit the number the recipes you receive with the ingredients selected before we received hundreds of recipes so we limited to 10.
 
 ## Challenges
 
-This was the second project for the course. In this project, we have to request the API of Spoonacular to get the list of recipes using the ingredients as references, it was tricky, we had to adjust the API URL to accept the ingredients for the research. One of the problems we had at the beginning was when we tried to make to find recipes with multiple ingredients, we had to make an array with the ingredients which later we transform in a string to use in the request to get the recipes.
+This was the second project for the course. In this project, we had to request the API of Spoonacular to get the list of recipes using the ingredients as references, it was tricky, we had to adjust the API URL to accept the ingredients for the research. One of the problems we had at the beginning was when we tried to make to find recipes with multiple ingredients, we had to make an array with the ingredients which later we transform in a string to use in the request to get the recipes.
 
 ## Lessons
 
-It was my first pair code project, each of us has differences in coding, styling, and ideas. The most important thing I learn is the importance to communicate and divide the task with your team. Planning and drawing our project to don't lose time while coding.
+It was my first pair code project, each of us had differences in coding, styling, and ideas. The most important thing I learned is the importance to communicate and divide the task with your team. Planning and drawing our project to don't lose time while coding.
