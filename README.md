@@ -45,7 +45,7 @@ Following this, we designed the app, we made a simple design with a logo and the
  
 ![Main Menu](src/assets/main.png)
  
-Firstly, I started making the design of the App with HTML5 and CSS, while my partner was making a logo for the app. After we have the design of the app. We started to request the API to get the recipes, we figured out that we need to make 2 requests, one to filter the recipes with the ingredients and the last one to get all the data of those recipes (name, ingredients, how to make it) so then we adjust the URL to get the recipes to filter by ingredients and then we created a function that joins the ingredients in a string to filter the recipes.
+Firstly, I started making the design of the App with HTML5 and CSS, while my partner was making a logo for the app. After we have the design of the app. We started to request the API to get the recipes, we figured out that we need to make 2 requests, one to filter the recipes with the ingredients and one to get all the data of those recipes (name, ingredients, how to make it) so then we adjust the URL to get the recipes to filter by ingredients and then we created a function that joins the ingredients in a string to filter the recipes.
  
  
 ```
@@ -159,13 +159,13 @@ handleSubmit = async (event, { ingredient1, ingredient2, ingredient3 }=this.stat
 export default Main
 ```
 
-Finally, we worked into making the appear the information of the recipes and we styled; images, name of the recipes, and a link to the recipe to make the food.
+Finally, we worked to making the recipe information appear and we styled images, name of the recipes, and a link to the recipe to make the food.
 
 ![Recipes](src/assets/recipes.png)
 
 ## Wins
 
-The biggest win was to use 2 URL APIs to get the recipes with all the data we need. Also to limit the number of recipes you receive with the ingredients selected before we received hundreds of recipes so we limited to 10.
+The biggest win was to use 2 URL APIs to get the recipes with all the data we need. Also to limit the number of recipes you receive with the ingredients selected, before we received hundreds of recipes, so we then limited to 10.
 
 ## Challenges
 
